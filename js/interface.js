@@ -1937,7 +1937,7 @@ function updateSaveRuleValidation() {
   if (columns.length === 1) {
     return `<code>${columns[0]}</code> only`;
   }
-
+  columns = _.clone(columns);
   var lastColumn = columns.pop();
 
   return `${columns.map(col => `<code>${col}</code>`).join(', ')} and <code>${lastColumn}</code>`;
